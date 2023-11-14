@@ -525,10 +525,13 @@ end)
 ---
 -- Replace these language servers
 -- with the ones you have installed in your system
----
-require('lspconfig').lua_ls.setup({})
-require('lspconfig').rust_analyzer.setup({})
-require('lspconfig').pylsp.setup({})
+
+-- Adding cmp-nvim to every LSP
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+require('lspconfig').lua_ls.setup({capabilities })
+require('lspconfig').rust_analyzer.setup({capabilities })
+require('lspconfig').pylsp.setup({capabilities })
 
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
@@ -629,6 +632,13 @@ cmp.setup {
 
 -- Setting up Tokyo night color scheme
 vim.cmd[[colorscheme tokyonight-night]]
+
+-- Telescope setup
+local builtin = require('telescope.builtin')
+vim.keymap.set('n', '<C-f>', builtin.find_files, {})
+vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
+vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
+vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 
 -- The line beneath this is called `modeline`. See `:help modeline`
