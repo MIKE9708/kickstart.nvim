@@ -25,3 +25,8 @@ map('i', '<C-l>', '<right>')
 
 -- NeoTree
 map('n','<C-n>', ':Neotree toggle<CR>')
+
+-- Remap for keep moving text in visual mode
+map('v','<','<gv')
+map('v','>','>gv')
+
