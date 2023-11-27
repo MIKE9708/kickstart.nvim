@@ -30,3 +30,8 @@ map('n','<C-n>', ':Neotree toggle<CR>')
 map('v','<','<gv')
 map('v','>','>gv')
 
+-- Remap paste in insert mode
+map('i','<C-p>','<C-r>*')
+
+
+
