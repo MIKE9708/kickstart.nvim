@@ -22,7 +22,7 @@ Kickstart.nvim is a template for your own configuration.
 
 Kickstart Guide:
 
-I have left several `:help X` comments throughout the init.lua
+I have left severrequire("lazy").setup({{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}})al `:help X` comments throughout the init.lua
 You should run that command and read that help section for more information.
 
 In addition, I have some `NOTE:` items throughout the file.
@@ -384,7 +384,7 @@ vim.keymap.set('n', '<leader>sr', require('telescope.builtin').resume, { desc = 
 vim.defer_fn(function()
   require('nvim-treesitter.configs').setup {
     -- Add languages to be installed here that you want installed for treesitter
-    ensure_installed = { 'c', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
+    ensure_installed = { 'c', 'haskell', 'cpp', 'go', 'lua', 'python', 'rust', 'tsx', 'javascript', 'typescript', 'vimdoc', 'vim', 'bash' },
 
     -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
     auto_install = false,
@@ -529,7 +529,9 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('lspconfig').lua_ls.setup({capabilities })
 require('lspconfig').rust_analyzer.setup({capabilities })
 require('lspconfig').pylsp.setup({capabilities })
-
+require('lspconfig')['hls'].setup{
+  filetypes = { 'haskell', 'lhaskell', 'cabal' },
+}
 --  Add any additional override configuration in the following tables. They will be passed to
 --  the `settings` field of the server config. You must look up that documentation yourself.
 --
