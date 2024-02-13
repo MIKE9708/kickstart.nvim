@@ -655,5 +655,7 @@ vim.o.guicursor = table.concat({
   -- "r:hor50-Cursor/lCursor-blinkwait100-blinkon100-blinkoff100"
 }, ",")
 
+vim.opt.tabstop = 4
+
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
