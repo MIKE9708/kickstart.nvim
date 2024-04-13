@@ -10,6 +10,15 @@ local function map(mode, lhs, rhs, opts)
 
 end
 
+local function count_windows_and_remap()
+	local count = #vim.api.nvim_list_wins()
+	vim.api.nvim_command('echo "Hello, Nvim!"')
+	if count > 1 then
+		map("n", "<C-w>>", ">gv")
+		map("n", "<C-w><", "<gv")
+	end
+end
+
 -- Personal shortcut
 -- No arrow keys
 map('', '<up>', '<nop>')
@@ -33,5 +42,15 @@ map('v','>','>gv')
 -- Remap paste in insert mode
 map('i','<C-p>','<C-r>*')
 
+-- Window resize
+map("n", "=", [[<cmd>vertical resize +5<cr>]])
+map('n', '-', [[<cmd>vertical resize -5<cr>]])
+map('n', '+', [[<cmd>horizontal resize +2<cr>]])
+map('n', '_', [[<cmd>horizontal resize -2<cr>]])
 
+-- Change Window
+map('n', '<C-k>', '<C-w>k')
+map('n', '<C-j>', '<C-w>j')
+map('n', '<C-l>', '<C-w>l')
+map('n', '<C-h>', '<C-w>h')
 
