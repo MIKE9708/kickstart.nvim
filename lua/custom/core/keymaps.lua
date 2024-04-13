@@ -10,15 +10,6 @@ local function map(mode, lhs, rhs, opts)
 
 end
 
-local function count_windows_and_remap()
-	local count = #vim.api.nvim_list_wins()
-	vim.api.nvim_command('echo "Hello, Nvim!"')
-	if count > 1 then
-		map("n", "<C-w>>", ">gv")
-		map("n", "<C-w><", "<gv")
-	end
-end
-
 -- Personal shortcut
 -- No arrow keys
 map('', '<up>', '<nop>')
