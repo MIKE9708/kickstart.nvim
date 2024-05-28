@@ -19,7 +19,6 @@ Kickstart.nvim is a template for your own configuration.
   And then you can explore or search through `:help lua-guide`
   - https://neovim.io/doc/user/lua-guide.html
 
-
 Kickstart Guide:
 
 I have left severrequire("lazy").setup({{"nvim-treesitter/nvim-treesitter", build = ":TSUpdate"}})al `:help X` comments throughout the init.lua
@@ -638,7 +637,6 @@ cmp.setup {
 
 vim.o.guifont = "AurulentSansM Nerd Font"
 
-
 -- Setting up Tokyo night color scheme
 vim.cmd[[colorscheme tokyonight-night]]
 
@@ -649,13 +647,17 @@ vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
+local set = vim.opt -- set options
+set.tabstop = 4
+set.softtabstop = 4
+set.shiftwidth = 4
+
 vim.o.guicursor = table.concat({
   --"n-v-c:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
   "i-ci:ver30-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
   -- "r:hor50-Cursor/lCursor-blinkwait100-blinkon100-blinkoff100"
 }, ",")
 
-vim.opt.tabstop = 4
-
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
