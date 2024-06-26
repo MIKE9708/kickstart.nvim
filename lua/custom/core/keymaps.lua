@@ -45,3 +45,6 @@ map('n', '<C-j>', '<C-w>j')
 map('n', '<C-l>', '<C-w>l')
 map('n', '<C-h>', '<C-w>h')
 
+-- Toggle Mason using M
+map("n",'M', ':Mason <CR>')
+
