@@ -648,11 +648,13 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 
 -- local set = vim.opt -- set options
-vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
-vim.o.expandtab = true -- Pressing the TAB key will insert spaces instead of a TAB character
-vim.o.softtabstop = 4 -- Number of spaces inserted instead of a TAB character
-vim.o.shiftwidth = 4 -- Number of spaces inserted when indenting
-
+-- vim.o.tabstop = 4 -- A TAB character looks like 4 spaces
+-- vim.o.expandtab = true Pressing the TAB key will insert spaces instead of a TAB character
+-- vim.o.softtabstop = 4 Number of spaces inserted instead of a TAB character
+-- vim.o.shiftwidth = 4 Number of spaces inserted when indenting
+vim.cmd 'set expandtab'
+vim.cmd 'set tabstop=4'
+vim.cmd 'set shiftwidth=4'
 vim.o.guicursor = table.concat({
   --"n-v-c:block-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
   "i-ci:ver30-Cursor/lCursor-blinkwait1000-blinkon100-blinkoff100",
