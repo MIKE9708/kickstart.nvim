@@ -281,7 +281,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 require('toggleterm').setup {
   open_mapping = [[<C-t>]],
-  direction = 'float',
+  direction = 'horizontal',
 }
 
 
