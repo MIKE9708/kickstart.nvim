@@ -131,7 +131,7 @@ require('lazy').setup({
     'navarasu/onedark.nvim',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'tokyonight'
+      vim.cmd.colorscheme 'retrobox'
     end,
   },
 
@@ -267,6 +267,7 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous dia
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`
@@ -612,7 +613,7 @@ cmp.setup {
 vim.o.guifont = "AurulentSansM Nerd Font"
 
 -- Setting up Tokyo night color scheme
-vim.cmd[[colorscheme tokyonight-night]]
+vim.cmd[[colorscheme retrobox]]
 
 -- Telescope setup
 local builtin = require('telescope.builtin')
