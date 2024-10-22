@@ -11,6 +11,7 @@ vim.g.maplocalleader = ' '
 
 
 require('custom/core/keymaps')
+require('custom/core/enable_light')
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    https://github.com/folke/lazy.nvim
 --    `:help lazy.nvim.txt` for more info
@@ -687,5 +688,4 @@ vim.o.guicursor = table.concat({
 vim.cmd 'set noexpandtab'
 vim.cmd 'set tabstop=4'
 vim.cmd 'set shiftwidth=4'
-
 
