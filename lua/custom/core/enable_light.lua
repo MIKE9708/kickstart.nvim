@@ -5,7 +5,7 @@ vim.api.nvim_create_autocmd("ColorScheme",{
 		local color = vim.g.colors_name -- color
 		if color  == "gruvbox" then
 			vim.o.background = "light"
-		else
+			elseif color == "retrobox" then
 			vim.o.background = "dark"
 		end
 	  end, 0)
