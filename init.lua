@@ -86,7 +86,7 @@ require('lazy').setup({
     },
   },
 
-{ -- Useful plugin to show you pending keybinds.
+  {                     -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     opts = {
@@ -129,7 +129,7 @@ require('lazy').setup({
 
       -- Document existing key chains
       spec = {
-        { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
+        { '<leader>c', group = '[C]ode',     mode = { 'n', 'x' } },
         { '<leader>d', group = '[D]ocument' },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
@@ -214,7 +214,7 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',  opts = {} },
 
   -- Fuzzy Finder (files, lsp, etc)
   {
@@ -267,7 +267,7 @@ require('lazy').setup({
 -- NOTE: You can change these options as you wish!
 
 -- Disable InLIne diagnostic
-vim.diagnostic.config({virtual_text = false})
+vim.diagnostic.config({ virtual_text = false })
 vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
 
 -- Set highlight on search
@@ -386,7 +386,7 @@ local function live_grep_git_root()
   local git_root = find_git_root()
   if git_root then
     require('telescope.builtin').live_grep({
-      search_dirs = {git_root},
+      search_dirs = { git_root },
     })
   end
 end
@@ -542,8 +542,7 @@ local lsp_zero = require('lsp-zero')
 lsp_zero.on_attach(function(client, bufnr)
   -- see :help lsp-zero-keybindings
   -- to learn the available actions
-  lsp_zero.default_keymaps({buffer = bufnr})
-
+  lsp_zero.default_keymaps({ buffer = bufnr })
 end)
 
 ---
@@ -553,10 +552,10 @@ end)
 -- Adding cmp-nvim to every LSP
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
-require('lspconfig').lua_ls.setup({capabilities })
-require('lspconfig').rust_analyzer.setup({capabilities })
-require('lspconfig').pylsp.setup({capabilities })
-require('lspconfig')['hls'].setup{
+require('lspconfig').lua_ls.setup({ capabilities })
+require('lspconfig').rust_analyzer.setup({ capabilities })
+require('lspconfig').pylsp.setup({ capabilities })
+require('lspconfig')['hls'].setup {
   filetypes = { 'haskell', 'lhaskell', 'cabal' },
 }
 --  Add any additional override configuration in the following tables. They will be passed to
@@ -659,7 +658,7 @@ cmp.setup {
 vim.o.guifont = "AurulentSansM Nerd Font"
 
 -- Setting up Tokyo night color scheme
-vim.cmd[[colorscheme retrobox]]
+vim.cmd [[colorscheme retrobox]]
 
 -- Telescope setup
 local builtin = require('telescope.builtin')
@@ -688,4 +687,3 @@ vim.o.guicursor = table.concat({
 vim.cmd 'set noexpandtab'
 vim.cmd 'set tabstop=4'
 vim.cmd 'set shiftwidth=4'
-
